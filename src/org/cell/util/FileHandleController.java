@@ -1,4 +1,4 @@
-package org.anne.util;
+package org.cell.util;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,8 +10,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.anne.base.FileProcess;
-import org.anne.util.vo.FileInfoVO;
+import org.cell.base.FileProcess;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +39,9 @@ public class FileHandleController {
 	 */
 	@RequestMapping(value = "/singleFileUpload.html", method = RequestMethod.POST)
 	public @ResponseBody
-	FileInfoVO singleFileUpload(@RequestParam("file") MultipartFile file)
+    FileInfo singleFileUpload(@RequestParam("file") MultipartFile file)
 			throws IOException {
-		FileInfoVO fiv = new FileInfoVO();
+		FileInfo fiv = new FileInfo();
 		String newname = UUID.randomUUID().toString();
 		fiv.setFileId(newname);
 		fiv.setFileName(file.getOriginalFilename());
@@ -56,7 +55,6 @@ public class FileHandleController {
 	/**
 	 * 单文件上传
 	 * 
-	 * @param name
 	 * @RequestParam
 	 * @param file
 	 * @return
@@ -84,19 +82,18 @@ public class FileHandleController {
 	 * 多文件上传
 	 * 
 	 * @param request
-	 * @param name
 	 * @return
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/multiFileUpload.html", method = RequestMethod.POST)
 	public @ResponseBody
-	List<FileInfoVO> multiFileUpload(MultipartHttpServletRequest request)
+	List<FileInfo> multiFileUpload(MultipartHttpServletRequest request)
 			throws Exception {
 		List<MultipartFile> files = request.getFiles("file");
-		List<FileInfoVO> fileinfos = new ArrayList<FileInfoVO>();
+		List<FileInfo> fileinfos = new ArrayList<FileInfo>();
 		for (int i = 0; i < files.size(); i++) {
 			if (!files.get(i).isEmpty()) {
-				FileInfoVO fiv = new FileInfoVO();
+				FileInfo fiv = new FileInfo();
 				String newname = UUID.randomUUID().toString();
 				FileProcess.writeFile(files.get(i).getInputStream(), newname);
 				fiv.setFileId(newname);
@@ -117,7 +114,7 @@ public class FileHandleController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/downloadImage.html")
-	public void downloadImage(FileInfoVO vo, HttpServletResponse response)
+	public void downloadImage(FileInfo vo, HttpServletResponse response)
 			throws IOException {
 		ServletOutputStream outputStream = response.getOutputStream();
 		response.reset();

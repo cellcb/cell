@@ -1,6 +1,6 @@
-package org.anne.util.vo;
+package org.cell.util;
 
-public class FileInfoVO {
+public class FileInfo {
 	private String fileId;
 	private String fileName;
 

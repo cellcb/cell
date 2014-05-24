@@ -1,4 +1,4 @@
-package org.anne.base;
+package org.cell.base;
 
 public class ResponseInfo {
 	public boolean success;

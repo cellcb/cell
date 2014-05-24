@@ -1,4 +1,4 @@
-package org.anne.base;
+package org.cell.base;
 
 /**
  * 整个应用通用的常量 <br>
