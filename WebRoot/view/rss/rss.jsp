@@ -53,8 +53,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a
-                        href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm">Home</a>
+                <li>
+                    <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm">Home</a>
+                </li>
+                <li class="active">
+                    <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm">RSS</a>
                 </li>
                 <li><a href="http://v3.bootcss.com/examples/offcanvas/#about">About</a></li>
                 <li><a href="http://v3.bootcss.com/examples/offcanvas/#contact">Contact</a></li>
@@ -79,78 +82,9 @@
 
                 <p>This is a RSS web site for CB.</p>
             </div>
-            <div class="row">
-                <div class="col-6 col-sm-6 col-lg-4">
-                    <h2>Heading</h2>
+            <div class="row" id="blogDiv">
 
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna mollis euismod. Donec sed odio dui. </p>
 
-                    <p><a class="btn btn-default"
-                          href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                          role="button">View details »</a></p>
-                </div>
-                <!--/span-->
-                <div class="col-6 col-sm-6 col-lg-4">
-                    <h2>Heading</h2>
-
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna mollis euismod. Donec sed odio dui. </p>
-
-                    <p><a class="btn btn-default"
-                          href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                          role="button">View details »</a></p>
-                </div>
-                <!--/span-->
-                <div class="col-6 col-sm-6 col-lg-4">
-                    <h2>Heading</h2>
-
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna mollis euismod. Donec sed odio dui. </p>
-
-                    <p><a class="btn btn-default"
-                          href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                          role="button">View details »</a></p>
-                </div>
-                <!--/span-->
-                <div class="col-6 col-sm-6 col-lg-4">
-                    <h2>Heading</h2>
-
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna mollis euismod. Donec sed odio dui. </p>
-
-                    <p><a class="btn btn-default"
-                          href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                          role="button">View details »</a></p>
-                </div>
-                <!--/span-->
-                <div class="col-6 col-sm-6 col-lg-4">
-                    <h2>Heading</h2>
-
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna mollis euismod. Donec sed odio dui. </p>
-
-                    <p><a class="btn btn-default"
-                          href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                          role="button">View details »</a></p>
-                </div>
-                <!--/span-->
-                <div class="col-6 col-sm-6 col-lg-4">
-                    <h2>Heading</h2>
-
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                        mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-                        magna mollis euismod. Donec sed odio dui. </p>
-
-                    <p><a class="btn btn-default"
-                          href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                          role="button">View details »</a></p>
-                </div>
                 <!--/span-->
             </div>
             <!--/row-->
@@ -162,8 +96,8 @@
 
                 <c:forEach var="rss" items="${rssList}">
 
-                    <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                       class="list-group-item active">${rss.author}</a>
+                    <a href="#" onclick="loadBlog('${rss.url}');"
+                       class="list-group-item ">${rss.author}</a>
 
                 </c:forEach>
 
@@ -171,20 +105,7 @@
                    class="list-group-item">Link</a>
                 <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
                    class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
-                <a href="./Off Canvas Template for Bootstrap_files/Off Canvas Template for Bootstrap.htm"
-                   class="list-group-item">Link</a>
+
             </div>
         </div>
         <!--/span-->
@@ -205,18 +126,34 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="<%=basePath%>/js/jquery.min.js"></script>
-
 <script src="<%=basePath%>/js/bootstrap.min.js"></script>
 <script src="<%=basePath%>/js/offcanvas.js"></script>
 <script>
+    function loadBlog(url) {
+        $.ajax({
+            type: "POST",
+            data: {
+                url: url
+            },
+            url: "<%=basePath%>/rss/loadBlog.html",
+            success: function (bloginfo) {
+
+                for (var i = 0; i < bloginfo.result.length; i++) {
+
+                    $("#blogDiv").append(' <div class="col-6 col-sm-6 col-lg-4">' +
+                            '<h2>' +bloginfo.author+ '</h2>' +
+
+                            ' <p>' + bloginfo.result[i].title + '</p>' + ' <p><a class="btn btn-default"' +
+                            'href="'+bloginfo.result[i].url+'" '
+                            +'role="button">View details »</a></p>' +
+                            '</div>');
+
+                }
+            }
+        });
+    }
     $(document).ready(function () {
-        <%--$.ajax({--%>
-        <%--type: "POST",--%>
-        <%--url: "<%=basePath%>/rss/getRss.html",--%>
-        <%--success: function (msg) {--%>
-        <%--alert(msg);--%>
-        <%--}--%>
-        <%--});--%>
+
     });
 
 </script>

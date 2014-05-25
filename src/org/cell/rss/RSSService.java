@@ -72,8 +72,12 @@ public class RSSService {
             DBCollection collection = db.getCollection("rss");
             // 使用BasicDBObject对象创建一个mongodb的document,并给予赋值。
             BasicDBObject document = new BasicDBObject();
-            document.put("author", "thomas kyte");
-            document.put("url", "https://asktom.oracle.com/pls/apex/asktom.popular.rss?p_count=10");
+//            document.put("author", "thomas kyte");
+//            document.put("url", "https://asktom.oracle.com/pls/apex/asktom.popular.rss?p_count=10");
+            document.put("author", "Tanel Poder");
+            document.put("url", "http://blog.tanelpoder.com/comments/feed/");
+
+
             //将新建立的document保存到collection中去
             collection.insert(document);
             // 创建要查询的document

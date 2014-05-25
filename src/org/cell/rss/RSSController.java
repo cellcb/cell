@@ -1,5 +1,6 @@
 package org.cell.rss;
 
+import com.sun.syndication.io.FeedException;
 import org.cell.base.BaseController;
 import org.cell.base.ResponseInfo;
 import org.cell.base.UrlHelper;
@@ -11,6 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -31,6 +35,8 @@ public class RSSController {
     private static final Logger log = LoggerFactory.getLogger(RSSController.class);
     @Autowired
     RSSService rssService;
+    @Autowired
+    RSSUtil rssUtil;
 
 
     UrlHelper url = new UrlHelper("/view/rss");
@@ -41,12 +47,23 @@ public class RSSController {
         return new ModelAndView(url.join("rss"), "rssList", rss);
     }
 
-    @RequestMapping("/getRss.html")
+    @RequestMapping("/loadBlog.html")
     public
     @ResponseBody
-    ResponseInfo getRSS() {
+    ResponseInfo loadBlog(String url) {
         ResponseInfo ri = new ResponseInfo();
+        try {
+            List<BlogEntry> blogEntries = rssUtil.parseXml(new URL(url));
+            ri.setResult(blogEntries);
+        } catch (FeedException e) {
+            ri.setSuccess(false);
 
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            ri.setSuccess(false);
+
+            e.printStackTrace();
+        }
 
         ri.setSuccess(true);
         return ri;
