@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="http://v3.bootcss.com/docs-assets/ico/favicon.png">
 
-    <title>Off Canvas Template for Bootstrap</title>
+    <title>RSS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">

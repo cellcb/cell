@@ -21,7 +21,7 @@ public class RSSService {
         DB db = null;
         try {
             //实例化Mongo对象，连接27017端口
-            Mongo mongo = new Mongo("localhost", 27017);
+            Mongo mongo = new Mongo("54.186.150.52", 27017);
             //连接名为yourdb的数据库，假如数据库不存在的话，mongodb会自动建立
             db = mongo.getDB("cell");
             return db;
